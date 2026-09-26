@@ -97,33 +97,13 @@
       justify-content:center;
       padding:clamp(48px,8vw,86px) clamp(28px,8vw,88px);
       isolation:isolate;
-    }
-
-    .hero::before {
-      content:"";
-      position:absolute;
-      width:72%;
-      height:160%;
-      right:-22%;
-      top:-32%;
-      z-index:-1;
-      opacity:.65;
-      background:repeating-linear-gradient(116deg, transparent 0 12px, rgba(53,111,155,.7) 13px 15px, transparent 16px 25px);
-      clip-path:polygon(25% 0,100% 0,100% 100%,0 100%);
-    }
-
-    .hero::after {
-      content:"";
-      position:absolute;
-      width:2px;
-      height:150%;
-      right:21%;
-      top:-25%;
-      background:var(--gold);
-      transform:rotate(-29deg);
-      transform-origin:center;
-      opacity:.9;
-      z-index:-1;
+      background-image:
+        linear-gradient(rgba(3,14,26,.32),rgba(3,14,26,.38)),
+        url("assets/card-front-lines.svg"),
+        url("Gemini_Generated_Image_ue32mcue32mcue32.png");
+      background-position:center;
+      background-size:auto,100% 100%,cover;
+      background-repeat:no-repeat;
     }
 
     .brand {
@@ -178,6 +158,7 @@
     .hero-actions {
       display:flex;
       flex-wrap:wrap;
+      justify-content:center;
       gap:12px;
       margin-top:42px;
     }
@@ -216,8 +197,12 @@
       position:relative;
       padding:clamp(34px,5vw,62px);
       background:
-        linear-gradient(rgba(4,19,34,.72),rgba(4,19,34,.78)),
+        linear-gradient(rgba(4,19,34,.30),rgba(4,19,34,.48)),
+        url("assets/card-back-lines.svg"),
         url("Gemini_Generated_Image_ue32mcue32mcue32.png") center/cover;
+      background-size:auto,100% 100%,cover;
+      background-position:center;
+      background-repeat:no-repeat;
       border-top:1px solid var(--line);
     }
 
@@ -266,8 +251,9 @@
       display:grid;
       place-items:center;
       color:var(--gold-light);
-      border:1px solid rgba(215,173,62,.75);
-      background:rgba(3,12,21,.46);
+      border-radius:50%;
+      background:radial-gradient(circle at top left,#333,#000);
+      box-shadow:0 4px 8px rgba(0,0,0,.32),inset 0 0 0 1px #d4af37;
       font-size:16px;
     }
 
@@ -324,10 +310,10 @@
       font-size:12px;
     }
 
-    .stores { display:flex; gap:10px; flex-wrap:wrap; }
+    .stores { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
 
-    .store { display:block; opacity:.9; }
-    .store img { display:block; width:min(100%,360px); height:auto; }
+    .store { display:block; width:156px; opacity:.9; }
+    .store img { display:block; width:100%; height:auto; }
 
     .footer {
       padding:18px 28px;
@@ -388,11 +374,10 @@
       }
       .hero-actions {
         margin-top:auto;
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
+        display:flex;
+        justify-content:center;
       }
-      .action { width:100%; padding:0 10px; }
-      .action:last-child { grid-column:1/-1; }
+      .action { width:auto; padding:0 10px; }
       .contact { padding:30px 18px; }
       .people { line-height:1.9; margin-bottom:22px; }
       .people span { display:none; }
@@ -400,7 +385,7 @@
       .contact-card.full { grid-column:auto; }
       .app-panel { flex-direction:column; align-items:flex-start; }
       .stores { width:100%; }
-      .store { flex:1; text-align:center; }
+      .store { flex:1; width:auto; text-align:center; }
     }
 
     @media (prefers-reduced-motion:reduce) {
@@ -510,7 +495,8 @@
             <span>Download links will be available here soon.</span>
           </div>
           <div class="stores" aria-label="App store links">
-            <span class="store" aria-label="Google Play and App Store badges; download links not yet available"><img src="assets/APP STORE AND GOOGLE PLAY.svg" alt="Available on Google Play and the App Store"></span>
+            <span class="store" aria-label="Google Play download link not yet available"><img src="assets/google-play.svg" alt="Get it on Google Play"></span>
+            <span class="store" aria-label="App Store download link not yet available"><img src="assets/app-store.svg" alt="Download on the App Store"></span>
           </div>
         </div>
       </section>
