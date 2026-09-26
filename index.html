@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#081b2d">
-  <meta name="description" content="Jiana Bullions LLP — bullion and precious metals contact page, Mumbai.">
+  <meta name="theme-color" content="#071a2b">
+  <meta name="description" content="Jiana Bullions LLP — bullion and precious metals, Mumbai.">
   <meta name="format-detection" content="telephone=yes">
   <title>Jiana Bullions LLP | Mumbai</title>
 
@@ -12,23 +12,24 @@
   <link rel="apple-touch-icon" href="assets/logo-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <style>
     :root {
-      --navy-0:#03111f;
+      --navy-0:#020a13;
       --navy-1:#071a2b;
       --navy-2:#0d2941;
-      --blue:#406ea1;
-      --gold:#e2c57d;
-      --gold-light:#ecd48d;
+      --navy-3:#123957;
+      --blue:#416f9d;
+      --gold:#d7ad3e;
+      --gold-light:#f4da83;
       --gold-dark:#9a711c;
       --white:#f8fafc;
-      --muted:#b8c5d0;
-      --line:rgba(215,173,62,.34);
+      --muted:#aebdca;
+      --line:rgba(226,197,125,.32);
       --red:#d51624;
-      --shadow:0 30px 90px rgba(0,0,0,.52);
+      --shadow:0 30px 90px rgba(0,0,0,.62);
     }
 
     * { box-sizing:border-box; }
@@ -39,142 +40,159 @@
       color:var(--white);
       font-family:"DM Sans",system-ui,sans-serif;
       background:
-        linear-gradient(rgba(3,12,21,.52),rgba(3,12,21,.64)),
+        linear-gradient(rgba(2,10,19,.78),rgba(2,10,19,.88)),
         url("Gemini_Generated_Image_ue32mcue32mcue32.png") center/cover fixed;
     }
 
-    a { color:inherit; text-decoration:none; }
-    button, a { -webkit-tap-highlight-color:transparent; }
-
-    .page {
-      min-height:100vh;
-      padding:clamp(14px,2vw,28px);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .page::before,
-    .page::after {
+    body::before {
       content:"";
       position:fixed;
       inset:0;
       pointer-events:none;
       z-index:0;
-    }
-
-    .page::before {
-      opacity:.24;
+      opacity:.2;
       background:
-        repeating-linear-gradient(112deg, transparent 0 22px, rgba(58,113,157,.52) 23px 24px, transparent 25px 36px);
-      mask-image:linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+        repeating-linear-gradient(112deg,transparent 0 22px,rgba(58,113,157,.55) 23px 24px,transparent 25px 36px),
+        radial-gradient(circle at 50% 0%,rgba(215,173,62,.12),transparent 45%);
+      mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
     }
 
-    .page::after {
-      opacity:.035;
-      background-image:
-        radial-gradient(circle at 15% 25%, #fff 0 1px, transparent 1px),
-        radial-gradient(circle at 75% 65%, #fff 0 1px, transparent 1px);
-      background-size:19px 19px, 31px 31px;
+    a,button { -webkit-tap-highlight-color:transparent; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+
+    .page {
+      position:relative;
+      z-index:1;
+      min-height:100vh;
+      padding:clamp(12px,2vw,28px);
     }
 
     .shell {
-      position:relative;
-      z-index:1;
       width:min(1040px,100%);
       margin:auto;
       overflow:hidden;
-      border:1px solid rgba(226,197,125,.76);
-      border-radius:3px;
-      background:linear-gradient(145deg, rgba(7,26,43,.76), rgba(3,17,31,.78)),url("Gemini_Generated_Image_ue32mcue32mcue32.png") center/cover;
+      border:1px solid rgba(226,197,125,.72);
+      border-radius:22px;
+      background:var(--navy-1);
       box-shadow:var(--shadow);
     }
 
+    /* FLOW 1 — HERO / DIGITAL BUSINESS CARD */
     .hero {
-      min-height:570px;
       position:relative;
+      isolation:isolate;
+      min-height:600px;
       display:flex;
       flex-direction:column;
+      align-items:center;
       justify-content:center;
-      padding:clamp(48px,8vw,86px) clamp(28px,8vw,88px);
-      isolation:isolate;
-      background-image:
-        linear-gradient(rgba(3,14,26,.32),rgba(3,14,26,.38)),
+      padding:52px clamp(22px,7vw,82px) 44px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      background:
+        linear-gradient(rgba(3,14,26,.28),rgba(3,14,26,.46)),
         url("assets/card-front-lines.svg"),
-        url("Gemini_Generated_Image_ue32mcue32mcue32.png");
-      background-position:center;
+        url("Gemini_Generated_Image_ue32mcue32mcue32.png") center/cover;
       background-size:auto,100% 100%,cover;
       background-repeat:no-repeat;
     }
 
+    .hero::before {
+      content:"";
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(226,197,125,.23);
+      pointer-events:none;
+    }
+
+    .hero::after {
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0;
+      height:3px;
+      background:linear-gradient(90deg,var(--red),#9e0e19 45%,var(--red));
+      z-index:2;
+    }
+
+    .hero-content { position:relative; z-index:3; width:100%; }
+
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:8px 14px;
+      margin-bottom:28px;
+      border:1px solid rgba(226,197,125,.5);
+      border-radius:999px;
+      background:rgba(3,14,26,.58);
+      color:var(--gold-light);
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      box-shadow:0 8px 25px rgba(0,0,0,.24);
+      backdrop-filter:blur(8px);
+    }
+
+    .badge i { color:var(--gold); }
+
     .brand {
       display:flex;
-      align-items:center;
       flex-direction:column;
-      justify-content:center;
-      gap:8px;
-      max-width:100%;
+      align-items:center;
+      gap:10px;
     }
 
-    /* Official CorelDRAW logomark: 231.01 x 390.12 */
     .mark {
-      display:block;
-      width:clamp(48px,7vw,68px);
+      width:clamp(48px,7vw,70px);
       height:auto;
-      flex:0 0 auto;
-      filter:drop-shadow(0 8px 18px rgba(0,0,0,.42));
+      filter:drop-shadow(0 8px 18px rgba(0,0,0,.5));
     }
 
-    /* Official CorelDRAW wordmark: 3516.1 x 1176.59 (includes the
-       "Bullion & Precious Metals" sub-line, so no extra text is needed). */
     .wordmark {
-      display:block;
-      width:clamp(280px,58vw,500px);
-      max-width:100%;
+      width:min(560px,82vw);
       height:auto;
-      filter:drop-shadow(0 10px 26px rgba(0,0,0,.42));
+      filter:drop-shadow(0 12px 28px rgba(0,0,0,.5));
     }
 
-    .chevrons {
-      position:absolute;
-      right:18%;
-      top:50%;
-      transform:translateY(-50%);
-      display:flex;
-      gap:24px;
-      opacity:.95;
-      display:none;
+    .hero-rule {
+      width:min(420px,72vw);
+      height:1px;
+      margin:20px auto 14px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
     }
 
-    .chevron {
-      width:112px;
-      height:300px;
-      background:linear-gradient(180deg,#f6dc83 0%,#c99b28 48%,#9b721b 100%);
-      clip-path:polygon(0 0, 48% 0, 100% 50%, 48% 100%, 0 100%, 50% 50%);
-      filter:drop-shadow(0 14px 22px rgba(0,0,0,.25));
+    .tagline {
+      margin:0;
+      color:var(--gold-light);
+      font-family:"Marcellus",serif;
+      font-size:clamp(15px,2vw,20px);
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      text-shadow:0 3px 15px rgba(0,0,0,.5);
     }
-
-    .chevron:nth-child(2) { opacity:.95; }
 
     .hero-actions {
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
-      gap:12px;
-      margin-top:42px;
+      gap:10px;
+      margin-top:34px;
     }
 
     .action {
+      min-height:46px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:9px;
-      min-height:46px;
       padding:0 18px;
-      border:1px solid rgba(215,173,62,.7);
-      border-radius:6px;
-      background:rgba(3,12,21,.52);
+      border:1px solid rgba(215,173,62,.58);
+      border-radius:999px;
+      background:rgba(3,12,21,.62);
       color:var(--gold-light);
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
       letter-spacing:.04em;
       transition:.2s ease;
@@ -182,94 +200,150 @@
     }
 
     .action.primary {
-      background:linear-gradient(135deg,#e2bc4f,#aa7e20);
-      color:#091521;
+      background:linear-gradient(135deg,#e2bc4f,#a87c20);
+      color:#071522;
       border-color:#f0d26c;
     }
 
     .action:hover {
       transform:translateY(-2px);
       border-color:var(--gold-light);
-      box-shadow:0 8px 24px rgba(0,0,0,.22);
+      box-shadow:0 10px 28px rgba(0,0,0,.28);
     }
 
+    /* FLOW 2 — CONTACT SHEET */
     .contact {
       position:relative;
-      padding:clamp(34px,5vw,62px);
+      padding:clamp(30px,5vw,58px);
       background:
-        linear-gradient(rgba(4,19,34,.30),rgba(4,19,34,.48)),
+        linear-gradient(rgba(4,19,34,.48),rgba(4,19,34,.62)),
         url("assets/card-back-lines.svg"),
         url("Gemini_Generated_Image_ue32mcue32mcue32.png") center/cover;
       background-size:auto,100% 100%,cover;
-      background-position:center;
       background-repeat:no-repeat;
-      border-top:1px solid var(--line);
     }
 
-    .people {
-      margin:0 0 34px;
-      color:#fff;
-      font-size:clamp(15px,2vw,20px);
-      font-weight:700;
-      letter-spacing:.08em;
+    .section-heading {
+      margin:0 0 28px;
       text-align:center;
+    }
+
+    .eyebrow {
+      display:block;
+      margin-bottom:7px;
+      color:var(--gold);
+      font-family:"Cinzel",serif;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.22em;
       text-transform:uppercase;
     }
 
-    .people span { color:var(--gold); padding:0 7px; }
+    .section-heading h1 {
+      margin:0;
+      color:#fff;
+      font-family:"Cinzel",serif;
+      font-size:clamp(20px,3vw,28px);
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
 
-    .contact-grid {
+    .people {
+      margin:12px auto 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.7;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .people span { color:var(--gold); padding:0 6px; }
+
+    .contact-list {
+      max-width:820px;
+      margin:auto;
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:14px;
     }
 
-    .contact-card {
-      min-height:88px;
+    .contact-row {
       display:flex;
       align-items:flex-start;
       gap:15px;
-      padding:18px;
-      border:1px solid rgba(226,197,125,.42);
-      border-radius:7px;
-      background:linear-gradient(135deg,rgba(13,36,57,.80),rgba(5,18,30,.82));
+      padding:17px;
+      border:1px solid rgba(226,197,125,.34);
+      border-radius:15px;
+      background:linear-gradient(135deg,rgba(13,41,65,.86),rgba(4,17,29,.88));
+      box-shadow:0 10px 28px rgba(0,0,0,.18);
       transition:.2s ease;
     }
 
-    .contact-card:hover {
+    a.contact-row:hover {
       transform:translateY(-2px);
-      border-color:rgba(245,220,131,.8);
-      background:linear-gradient(135deg,rgba(17,50,76,.94),rgba(5,18,30,.92));
+      border-color:rgba(245,220,131,.76);
+      background:linear-gradient(135deg,rgba(17,53,81,.95),rgba(4,17,29,.94));
     }
 
-    .contact-card.full { grid-column:1/-1; }
+    .contact-row.split {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      padding:0;
+      border:0;
+      background:none;
+      box-shadow:none;
+    }
+
+    .contact-row.split > .contact-card { min-width:0; }
+
+    .contact-card {
+      min-height:82px;
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      padding:17px;
+      border:1px solid rgba(226,197,125,.34);
+      border-radius:15px;
+      background:linear-gradient(135deg,rgba(13,41,65,.86),rgba(4,17,29,.88));
+      box-shadow:0 10px 28px rgba(0,0,0,.18);
+      transition:.2s ease;
+    }
+
+    a.contact-card:hover {
+      transform:translateY(-2px);
+      border-color:rgba(245,220,131,.76);
+      background:linear-gradient(135deg,rgba(17,53,81,.95),rgba(4,17,29,.94));
+    }
 
     .icon {
-      width:40px;
-      height:40px;
-      flex:0 0 40px;
+      width:42px;
+      height:42px;
+      flex:0 0 42px;
       display:grid;
       place-items:center;
       color:var(--gold-light);
+      border:1px solid rgba(215,173,62,.72);
       border-radius:50%;
-      background:radial-gradient(circle at top left,#333,#000);
-      box-shadow:0 4px 8px rgba(0,0,0,.32),inset 0 0 0 1px #d4af37;
-      font-size:16px;
+      background:radial-gradient(circle at 30% 20%,#183d5c,#030d17 72%);
+      box-shadow:0 5px 14px rgba(0,0,0,.3);
     }
 
     .label {
       display:block;
       margin-bottom:5px;
       color:var(--gold-light);
+      font-family:"Cinzel",serif;
       font-size:10px;
       font-weight:700;
-      letter-spacing:.16em;
+      letter-spacing:.14em;
       text-transform:uppercase;
     }
 
     .value {
+      display:block;
       color:#fff;
-      font-size:15px;
+      font-size:14px;
       font-weight:600;
       line-height:1.55;
       overflow-wrap:anywhere;
@@ -278,49 +352,136 @@
     address { font-style:normal; }
 
     .map-link {
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
       margin-top:8px;
       color:var(--gold-light);
-      font-size:11px;
+      font-size:10px;
       font-weight:700;
+      letter-spacing:.1em;
       text-transform:uppercase;
-      letter-spacing:.08em;
     }
 
-    .app-panel {
-      margin-top:24px;
-      padding:22px;
+    .copy-btn {
+      margin-left:auto;
+      flex:0 0 auto;
+      padding:6px 9px;
+      border:1px solid rgba(215,173,62,.35);
+      border-radius:8px;
+      background:rgba(3,12,21,.4);
+      color:var(--gold-light);
+      font-size:10px;
+      cursor:pointer;
+    }
+
+    /* FLOW 3 — WEBSITE / APP BANNER */
+    .service-banner {
+      max-width:820px;
+      margin:24px auto 0;
+      padding:20px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:20px;
-      border:1px solid rgba(215,173,62,.42);
-      background:rgba(3,12,21,.42);
+      border:1px solid rgba(215,173,62,.52);
+      border-radius:16px;
+      background:linear-gradient(100deg,rgba(18,57,87,.92),rgba(3,15,27,.96),rgba(18,57,87,.92));
+      box-shadow:0 16px 36px rgba(0,0,0,.24);
     }
 
-    .app-copy strong {
+    .service-copy {
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .service-icon {
+      width:48px;
+      height:48px;
+      flex:0 0 48px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--gold);
+      border-radius:12px;
+      color:var(--gold-light);
+      background:rgba(0,0,0,.2);
+    }
+
+    .service-copy strong {
       display:block;
+      margin-bottom:4px;
       color:#fff;
-      font-size:15px;
-      margin-bottom:5px;
+      font-family:"Cinzel",serif;
+      font-size:14px;
+      letter-spacing:.03em;
     }
 
-    .app-copy span {
+    .service-copy span {
       color:var(--muted);
-      font-size:12px;
+      font-size:11px;
     }
 
-    .stores { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
+    .service-actions {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
 
-    .store { display:block; width:156px; opacity:.9; }
-    .store img { display:block; width:100%; height:auto; }
+    .small-action {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:7px;
+      min-height:38px;
+      padding:0 13px;
+      border-radius:9px;
+      border:1px solid rgba(215,173,62,.5);
+      background:rgba(3,12,21,.52);
+      color:var(--gold-light);
+      font-size:10px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
 
+    .small-action.primary {
+      background:var(--gold);
+      color:#071522;
+    }
+
+    .small-action.disabled {
+      opacity:.62;
+      cursor:default;
+    }
+
+    /* FLOW 4 — FOOTER */
     .footer {
-      padding:18px 28px;
+      padding:24px 28px;
       border-top:1px solid rgba(215,173,62,.25);
-      color:#8294a3;
+      background:rgba(2,10,19,.9);
       text-align:center;
-      font-size:11px;
+    }
+
+    .footer-seals {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:18px;
+      color:var(--gold-light);
+      font-size:10px;
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .footer-seals span { display:inline-flex; align-items:center; gap:7px; }
+    .footer-seals i { color:var(--gold); }
+
+    .footer p {
+      margin:13px 0 0;
+      color:#718394;
+      font-size:10px;
       letter-spacing:.04em;
     }
 
@@ -328,12 +489,13 @@
       position:fixed;
       left:50%;
       bottom:22px;
+      z-index:30;
       transform:translate(-50%,20px);
       opacity:0;
       pointer-events:none;
-      z-index:20;
       padding:11px 15px;
       border:1px solid var(--gold);
+      border-radius:9px;
       background:#061523;
       color:#fff;
       font-size:12px;
@@ -357,35 +519,21 @@
 
     @media (max-width:760px) {
       .page { padding:0; }
-      .shell { border-left:0;border-right:0;border-radius:0; }
-      .hero {
-        min-height:620px;
-        padding:48px 24px 38px;
-        justify-content:flex-start;
-      }
-      .brand { gap:15px; align-items:center; }
-      .mark { width:48px; }
-      .wordmark { width:min(82vw,360px); }
-      .chevrons {
-        right:-3%;
-        top:54%;
-        opacity:.72;
-        transform:translateY(-50%) scale(.72);
-      }
-      .hero-actions {
-        margin-top:auto;
-        display:flex;
-        justify-content:center;
-      }
-      .action { width:auto; padding:0 10px; }
-      .contact { padding:30px 18px; }
-      .people { line-height:1.9; margin-bottom:22px; }
+      .shell { border-left:0; border-right:0; border-radius:0; }
+      .hero { min-height:610px; padding:46px 20px 34px; }
+      .hero::before { inset:10px; }
+      .badge { margin-bottom:22px; }
+      .tagline { font-size:13px; letter-spacing:.12em; }
+      .hero-actions { margin-top:28px; }
+      .action { flex:1 1 auto; min-width:105px; padding:0 11px; }
+      .contact { padding:28px 16px; }
+      .section-heading h1 { font-size:21px; }
       .people span { display:none; }
-      .contact-grid { grid-template-columns:1fr; }
-      .contact-card.full { grid-column:auto; }
-      .app-panel { flex-direction:column; align-items:flex-start; }
-      .stores { width:100%; }
-      .store { flex:1; width:auto; text-align:center; }
+      .contact-row.split { grid-template-columns:1fr; }
+      .service-banner { flex-direction:column; align-items:stretch; }
+      .service-actions { width:100%; }
+      .small-action { flex:1; }
+      .footer-seals { gap:12px; }
     }
 
     @media (prefers-reduced-motion:reduce) {
@@ -396,113 +544,135 @@
 </head>
 
 <body>
-  <a class="sr-only" href="#contact">Skip to contact information</a>
+  <a class="sr-only" href="#contact-details">Skip to contact details</a>
 
   <div class="page">
     <main class="shell" aria-label="Jiana Bullions LLP digital business card">
 
+      <!-- HERO: same information hierarchy as the Laxmi reference, restyled in Jiana navy velvet -->
       <header class="hero">
-        <div class="brand">
-          <img class="mark" src="assets/logo-mark.svg" width="231" height="390" alt="" aria-hidden="true" decoding="async">
-          <img class="wordmark" src="assets/logo-wordmark.svg" width="3516" height="1177" alt="Jiana Bullions LLP — Bullion and Precious Metals" decoding="async" fetchpriority="high">
-        </div>
+        <div class="hero-content">
+          <div class="badge">
+            <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+            Mumbai · Bullion &amp; Precious Metals
+          </div>
 
-        <div class="chevrons" aria-hidden="true">
-          <span class="chevron"></span>
-          <span class="chevron"></span>
-        </div>
+          <div class="brand">
+            <img class="mark" src="assets/logo-mark.svg" width="231" height="390" alt="" aria-hidden="true" decoding="async">
+            <img class="wordmark" src="assets/logo-wordmark.svg" width="3516" height="1177" alt="Jiana Bullions LLP" decoding="async" fetchpriority="high">
+          </div>
 
-        <nav class="hero-actions" aria-label="Quick actions">
-          <a class="action primary" href="tel:+918070257444"><i class="fa-solid fa-phone"></i> Call</a>
-          <a class="action" href="https://wa.me/918070257444" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-          <a class="action" href="#contact"><i class="fa-solid fa-address-card"></i> Contact Details</a>
-        </nav>
+          <div class="hero-rule" aria-hidden="true"></div>
+          <p class="tagline">Bullion &amp; Precious Metals</p>
+
+          <nav class="hero-actions" aria-label="Quick actions">
+            <a class="action primary" href="tel:+918070257444"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+            <a class="action" href="https://wa.me/918070257444" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+            <a class="action" href="#contact-details"><i class="fa-solid fa-address-card" aria-hidden="true"></i> Contact Details</a>
+          </nav>
+        </div>
       </header>
 
-      <section id="contact" class="contact" aria-labelledby="contact-heading">
-        <h1 id="contact-heading" class="people">
-          DIPESH PARMAR <span>•</span> RITHIK PARMAR <span>•</span> NISHIL SINGHI
-        </h1>
+      <!-- CONTACT SHEET -->
+      <section id="contact-details" class="contact" aria-labelledby="contact-heading">
+        <div class="section-heading">
+          <span class="eyebrow">Business Contact</span>
+          <h1 id="contact-heading">Connect With Jiana Bullions</h1>
+          <p class="people">
+            DIPESH PARMAR <span>•</span> RITHIK PARMAR <span>•</span> NISHIL SINGHI
+          </p>
+        </div>
 
-        <div class="contact-grid">
+        <div class="contact-list">
 
-          <a class="contact-card full" href="https://www.google.com/maps/search/?api=1&query=24%2C%202nd%20Floor%2C%20111%2C%20Chawla%20Building%2C%20Mumbadevi%20Road%2C%20Near%20Tambakata%2C%20Pydhonie%2C%20Mandvi%2C%20Mumbai%2C%20Maharashtra%20400003" target="_blank" rel="noopener">
-            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+          <a class="contact-row" href="https://www.google.com/maps/search/?api=1&query=2nd%20Floor%2C%20Office%20No.%20203%2C%20106%2F108%2C%20Arihant%20Building%2C%20Dhanji%20St%2C%20Mumbai%20-%203" target="_blank" rel="noopener" aria-label="Open Jiana Bullions office in Google Maps">
+            <div class="icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
             <div>
               <span class="label">Office</span>
               <address class="value">
-                24, 2nd Floor, 111, Chawla Building,<br>
-                Mumbadevi Road, Near Tambakata, Pydhonie, Mandvi,<br>
-                Mumbai, Maharashtra - 400 003
+                2nd Floor, Office No. 203, 106/108, Arihant Building, Dhanji St,<br>
+                Mumbai - 3
               </address>
-              <span class="map-link">Open in Google Maps →</span>
+              <span class="map-link"><i class="fa-solid fa-compass" aria-hidden="true"></i> Open in Google Maps</span>
             </div>
           </a>
 
-          <a class="contact-card" href="tel:+918070257444">
-            <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-            <div>
-              <span class="label">Mobile</span>
-              <span class="value">8070257444</span>
-            </div>
-          </a>
+          <div class="contact-row split">
+            <a class="contact-card" href="tel:+918070257444" aria-label="Call 8070257444">
+              <div class="icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+              <div>
+                <span class="label">Mobile</span>
+                <span class="value">8070257444</span>
+              </div>
+            </a>
 
-          <a class="contact-card" href="tel:+918070284111">
-            <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-            <div>
-              <span class="label">Mobile</span>
-              <span class="value">8070284111</span>
-            </div>
-          </a>
+            <a class="contact-card" href="tel:+918070284111" aria-label="Call 8070284111">
+              <div class="icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+              <div>
+                <span class="label">Mobile</span>
+                <span class="value">8070284111</span>
+              </div>
+            </a>
+          </div>
 
-          <a class="contact-card" href="tel:+912242666555">
-            <div class="icon"><i class="fa-solid fa-phone"></i></div>
-            <div>
-              <span class="label">Telephone</span>
-              <span class="value">022-42666555</span>
-            </div>
-          </a>
+          <div class="contact-row split">
+            <a class="contact-card" href="tel:+912242666555" aria-label="Call 022 42666555">
+              <div class="icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div>
+              <div>
+                <span class="label">Telephone</span>
+                <span class="value">022-42666555</span>
+              </div>
+            </a>
 
-          <div class="contact-card">
-            <div class="icon"><i class="fa-solid fa-building"></i></div>
-            <div>
-              <span class="label">Intercom</span>
-              <span class="value">2557 / 2577</span>
+            <div class="contact-card">
+              <div class="icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+              <div>
+                <span class="label">Intercom</span>
+                <span class="value">2557 / 2577</span>
+              </div>
             </div>
           </div>
 
-          <a class="contact-card" href="mailto:jianabullionllp@gmail.com">
-            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <a class="contact-row" href="mailto:jianabullionllp@gmail.com">
+            <div class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
             <div>
-              <span class="label">Email</span>
+              <span class="label">Email Address</span>
               <span class="value">jianabullionllp@gmail.com</span>
             </div>
           </a>
 
-          <a class="contact-card full" href="https://jianabullionllp.com" target="_blank" rel="noopener">
-            <div class="icon"><i class="fa-solid fa-globe"></i></div>
+          <a class="contact-row" href="https://jianabullionllp.com" target="_blank" rel="noopener">
+            <div class="icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
             <div>
-              <span class="label">Website</span>
+              <span class="label">Official Website</span>
               <span class="value">jianabullionllp.com</span>
             </div>
           </a>
 
-        </div>
+          <div class="service-banner" aria-label="Jiana Bullions website and mobile app">
+            <div class="service-copy">
+              <div class="service-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+              <div>
+                <strong>Jiana Bullions Mobile App</strong>
+                <span>App store links can be connected when the official listings are available.</span>
+              </div>
+            </div>
+            <div class="service-actions">
+              <span class="small-action disabled"><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</span>
+              <span class="small-action disabled"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</span>
+            </div>
+          </div>
 
-        <div class="app-panel" aria-label="Mobile app links">
-          <div class="app-copy">
-            <strong>Jiana Bullions Mobile App</strong>
-            <span>Download links will be available here soon.</span>
-          </div>
-          <div class="stores" aria-label="App store links">
-            <span class="store" aria-label="Google Play download link not yet available"><img src="assets/google-play.svg" alt="Get it on Google Play"></span>
-            <span class="store" aria-label="App Store download link not yet available"><img src="assets/app-store.svg" alt="Download on the App Store"></span>
-          </div>
         </div>
       </section>
 
       <footer class="footer">
-        JIANA BULLIONS LLP · MUMBAI
+        <div class="footer-seals">
+          <span><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Jiana Bullions LLP</span>
+          <span><i class="fa-solid fa-gem" aria-hidden="true"></i> Bullion &amp; Precious Metals</span>
+          <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mumbai</span>
+        </div>
+        <p>Digital business card · JIANA BULLIONS LLP · Mumbai</p>
       </footer>
 
     </main>
@@ -511,7 +681,6 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
-    // Keep contact actions deliberately simple and dependency-free.
     const toast = document.getElementById("toast");
 
     function showToast(message) {
@@ -521,7 +690,6 @@
       window.__toastTimer = window.setTimeout(() => toast.classList.remove("show"), 2200);
     }
 
-    // Expose a small copy helper for future contact-card extensions.
     window.copyJianaEmail = async function () {
       try {
         await navigator.clipboard.writeText("jianabullionllp@gmail.com");
