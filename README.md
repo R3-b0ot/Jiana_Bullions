@@ -4,11 +4,11 @@ A responsive GitHub Pages contact page for **Jiana Bullions LLP**, based on the 
 
 ## Design direction
 
-- Textured midnight-blue background from `Gemini_Generated_Image_ue32mcue32mcue32.png`
+- Textured midnight-blue background in `assets/images/background-texture.png`
 - Champagne-gold accents and blue linework matching the updated card
 - White typography
 - Diagonal blue line system
-- Diagonal blue-and-gold linework adapted from `Jiana Bullions.svg` for the front and back panels
+- Diagonal blue-and-gold panel linework in `assets/linework/`
 - Responsive digital-business-card layout
 - Mobile-first clickable contact actions
 
@@ -32,6 +32,12 @@ The physical business card is treated as the visual source of truth; the page is
 - Google Fonts
 - GitHub Pages deployment via GitHub Actions
 
+## Asset folders
+
+- `assets/images/` — page background texture
+- `assets/logos/` — company mark and wordmark
+- `assets/linework/` — front and back card linework
+
 ## App links
 
-Separate Google Play and App Store badges are cropped from `assets/APP STORE AND GOOGLE PLAY.svg` into `assets/google-play.svg` and `assets/app-store.svg`. They remain non-clickable until official Jiana Bullions app URLs are provided.
+The live terminal banner's App Link button remains informational until official Jiana Bullions app URLs are provided. Store badge artwork is not included because the current page does not display it.
