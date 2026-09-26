@@ -375,7 +375,7 @@
       cursor:pointer;
     }
 
-    /* FLOW 3 — WEBSITE / APP BANNER */
+    /* FLOW 3 — LIVE TERMINAL / APP BANNER — Laxmi-style layout, Jiana navy velvet palette */
     .service-banner {
       max-width:820px;
       margin:24px auto 0;
@@ -383,71 +383,79 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:16px;
       border:1px solid rgba(215,173,62,.52);
       border-radius:16px;
-      background:linear-gradient(100deg,rgba(18,57,87,.92),rgba(3,15,27,.96),rgba(18,57,87,.92));
-      box-shadow:0 16px 36px rgba(0,0,0,.24);
+      background:linear-gradient(90deg,#123957 0%,#071a2b 50%,#123957 100%);
+      color:#fff;
+      box-shadow:0 16px 36px rgba(0,0,0,.3);
     }
 
     .service-copy {
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:12px;
     }
 
     .service-icon {
       width:48px;
       height:48px;
-      flex:0 0 48px;
-      display:grid;
-      place-items:center;
-      border:1px solid var(--gold);
       border-radius:12px;
+      background:rgba(248,250,252,.08);
+      border:1px solid var(--gold);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
       color:var(--gold-light);
-      background:rgba(0,0,0,.2);
     }
 
     .service-copy strong {
       display:block;
-      margin-bottom:4px;
       color:#fff;
-      font-family:"Cinzel",serif;
-      font-size:14px;
-      letter-spacing:.03em;
+      font-size:18px;
+      line-height:1.35;
+      font-weight:700;
+      margin-top:2px;
     }
 
     .service-copy span {
-      color:var(--muted);
-      font-size:11px;
+      display:block;
+      color:var(--gold-light);
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:3px;
     }
 
     .service-actions {
       display:flex;
+      align-items:center;
       gap:8px;
-      flex-wrap:wrap;
+      width:auto;
     }
 
     .small-action {
+      min-height:38px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:7px;
-      min-height:38px;
-      padding:0 13px;
-      border-radius:9px;
-      border:1px solid rgba(215,173,62,.5);
-      background:rgba(3,12,21,.52);
-      color:var(--gold-light);
+      padding:0 16px;
+      border-radius:10px;
+      border:1px solid rgba(215,173,62,.45);
+      background:rgba(3,12,21,.5);
+      color:#fff;
       font-size:10px;
       font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.06em;
+      letter-spacing:.04em;
+      white-space:nowrap;
     }
 
     .small-action.primary {
       background:var(--gold);
       color:#071522;
+      border-color:var(--gold-light);
     }
 
     .small-action.disabled {
@@ -455,34 +463,39 @@
       cursor:default;
     }
 
-    /* FLOW 4 — FOOTER */
+    /* FLOW 4 — FOOTER — copied from the Laxmi Bullion footer structure/content */
     .footer {
-      padding:24px 28px;
-      border-top:1px solid rgba(215,173,62,.25);
-      background:rgba(2,10,19,.9);
+      background:#231514;
+      padding:24px;
+      border-top:1px solid rgba(215,173,62,.30);
       text-align:center;
+      color:rgba(215,173,62,.80);
+      font-size:12px;
     }
 
     .footer-seals {
       display:flex;
       flex-wrap:wrap;
+      align-items:center;
       justify-content:center;
-      gap:18px;
-      color:var(--gold-light);
-      font-size:10px;
-      font-weight:600;
-      letter-spacing:.08em;
-      text-transform:uppercase;
+      gap:24px;
+      margin-bottom:12px;
+      color:rgba(243,224,134,.90);
+      font-weight:500;
     }
 
-    .footer-seals span { display:inline-flex; align-items:center; gap:7px; }
+    .footer-seals span {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
     .footer-seals i { color:var(--gold); }
 
     .footer p {
-      margin:13px 0 0;
-      color:#718394;
-      font-size:10px;
-      letter-spacing:.04em;
+      margin:0;
+      color:#9ca3af;
+      font-size:11px;
     }
 
     .toast {
@@ -533,6 +546,8 @@
       .service-banner { flex-direction:column; align-items:stretch; }
       .service-actions { width:100%; }
       .small-action { flex:1; }
+      .footer { padding:24px 18px; }
+      .footer-seals { gap:12px; }
       .footer-seals { gap:12px; }
     }
 
@@ -649,17 +664,25 @@
             </div>
           </a>
 
-          <div class="service-banner" aria-label="Jiana Bullions website and mobile app">
+          <div id="download-banner" class="service-banner" aria-label="Official live terminal and mobile app">
             <div class="service-copy">
-              <div class="service-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+              <div class="service-icon">
+                <i class="fa-solid fa-globe" style="font-size:24px" aria-hidden="true"></i>
+              </div>
               <div>
-                <strong>Jiana Bullions Mobile App</strong>
-                <span>App store links can be connected when the official listings are available.</span>
+                <span>Official Live Terminal</span>
+                <strong>jianabullionllp.com</strong>
               </div>
             </div>
+
             <div class="service-actions">
-              <span class="small-action disabled"><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</span>
-              <span class="small-action disabled"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</span>
+              <a href="https://jianabullionllp.com/" target="_blank" rel="noopener" class="small-action primary" aria-label="Visit Jiana Bullions official website">
+                Visit Website
+              </a>
+              <button id="download-action-btn" type="button" class="small-action" aria-label="View Jiana Bullions app links" onclick="showToast('App links can be connected when the official listings are available.')">
+                <i class="fa-solid fa-download" style="color:var(--gold)" aria-hidden="true"></i>
+                <span>App Link</span>
+              </button>
             </div>
           </div>
 
@@ -668,11 +691,13 @@
 
       <footer class="footer">
         <div class="footer-seals">
-          <span><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Jiana Bullions LLP</span>
-          <span><i class="fa-solid fa-gem" aria-hidden="true"></i> Bullion &amp; Precious Metals</span>
-          <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mumbai</span>
+          <span><i class="fa-solid fa-shield-check" aria-hidden="true"></i> BIS Hallmarked Bullion</span>
+          <span><i class="fa-solid fa-gem" aria-hidden="true"></i> 999.9 Fine Gold Bars</span>
+          <span><i class="fa-solid fa-clock" aria-hidden="true"></i> Mon - Sat: 11:00 AM - 8:00 PM</span>
         </div>
-        <p>Digital business card · JIANA BULLIONS LLP · Mumbai</p>
+        <p>
+          Designed By Zalak Arts +91 9869048490 &bull; Zaveri Bazaar, Mumbai. All Rights Reserved.
+        </p>
       </footer>
 
     </main>
