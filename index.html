@@ -8,9 +8,11 @@
   <meta name="format-detection" content="telephone=yes">
   <title>Jiana Bullions LLP | Mumbai</title>
 
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/logo-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <style>
@@ -129,49 +131,27 @@
     .brand {
       display:flex;
       align-items:center;
-      gap:28px;
-      max-width:720px;
+      gap:clamp(20px,3.2vw,36px);
+      max-width:100%;
     }
 
+    /* Official CorelDRAW logomark: 231.01 x 390.12 */
     .mark {
-      width:92px;
-      flex:0 0 92px;
-      filter:drop-shadow(0 8px 16px rgba(0,0,0,.35));
+      display:block;
+      width:clamp(56px,8.5vw,82px);
+      height:auto;
+      flex:0 0 auto;
+      filter:drop-shadow(0 8px 18px rgba(0,0,0,.42));
     }
 
-    .brand-copy {
-      min-width:0;
-    }
-
-    .script {
-      margin:0;
-      color:#fff;
-      font-family:"Playfair Display",serif;
-      font-style:italic;
-      font-weight:500;
-      font-size:clamp(44px,7vw,82px);
-      line-height:.86;
-      letter-spacing:-.055em;
-    }
-
+    /* Official CorelDRAW wordmark: 3516.1 x 1176.59 (includes the
+       "Bullion & Precious Metals" sub-line, so no extra text is needed). */
     .wordmark {
-      margin:10px 0 0;
-      color:#fff;
-      font-family:"Playfair Display",serif;
-      font-style:italic;
-      font-weight:500;
-      font-size:clamp(30px,4.6vw,58px);
-      line-height:.95;
-      letter-spacing:-.045em;
-    }
-
-    .llp {
-      margin:18px 0 0;
-      color:var(--gold-light);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.28em;
-      text-transform:uppercase;
+      display:block;
+      width:clamp(238px,50vw,430px);
+      max-width:100%;
+      height:auto;
+      filter:drop-shadow(0 10px 26px rgba(0,0,0,.42));
     }
 
     .chevrons {
@@ -403,11 +383,9 @@
         padding:48px 24px 38px;
         justify-content:flex-start;
       }
-      .brand { gap:17px; align-items:flex-start; }
-      .mark { width:66px; flex-basis:66px; }
-      .script { font-size:47px; }
-      .wordmark { font-size:32px; }
-      .llp { margin-top:13px; font-size:9px; }
+      .brand { gap:15px; align-items:center; }
+      .mark { width:52px; }
+      .wordmark { width:min(74vw,320px); }
       .chevrons {
         right:-3%;
         top:54%;
@@ -445,25 +423,9 @@
     <main class="shell" aria-label="Jiana Bullions LLP digital business card">
 
       <header class="hero">
-        <div class="brand" aria-label="Jiana Bullions LLP">
-          <svg class="mark" viewBox="0 0 100 140" role="img" aria-label="Jiana monogram">
-            <defs>
-              <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#f7df8c"/>
-                <stop offset=".45" stop-color="#d8ad3d"/>
-                <stop offset="1" stop-color="#9a711c"/>
-              </linearGradient>
-            </defs>
-            <path d="M31 18h21v70c0 22-11 36-30 42 11-9 14-20 14-35V39H31z" fill="url(#mg)"/>
-            <path d="M58 10h22v61c0 18-7 29-22 38 9-12 11-20 11-34V10z" fill="url(#mg)"/>
-            <circle cx="27" cy="108" r="14" fill="url(#mg)"/>
-          </svg>
-
-          <div class="brand-copy">
-            <p class="script">Jiana</p>
-            <p class="wordmark">Bullions LLP</p>
-            <p class="llp">Bullion &amp; Precious Metals</p>
-          </div>
+        <div class="brand">
+          <img class="mark" src="assets/logo-mark.svg" width="231" height="390" alt="" aria-hidden="true" decoding="async">
+          <img class="wordmark" src="assets/logo-wordmark.svg" width="3516" height="1177" alt="Jiana Bullions LLP — Bullion and Precious Metals" decoding="async" fetchpriority="high">
         </div>
 
         <div class="chevrons" aria-hidden="true">
